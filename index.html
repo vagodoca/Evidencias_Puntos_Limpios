@@ -22,7 +22,7 @@ body{font-family:Arial,sans-serif;background:#f5f5f5;padding:1rem}
 .radio-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid #ddd;border-radius:8px;cursor:pointer;font-size:14px;color:#222}
 .radio-item input{accent-color:#1a7a4a;width:16px;height:16px;flex-shrink:0}
 .radio-item.selected{border-color:#1a7a4a;background:rgba(26,122,74,0.06)}
-.foto-section{display:none;margin-bottom:0}
+.foto-section{display:none}
 .foto-section.visible{display:block}
 .foto-block{background:#f9f9f9;border-radius:8px;padding:1rem;margin-bottom:1rem;border:1px solid #eee}
 .foto-block-title{font-size:13px;font-weight:700;color:#222;margin-bottom:6px}
@@ -31,7 +31,6 @@ body{font-family:Arial,sans-serif;background:#f5f5f5;padding:1rem}
 .upload-box{border:2px dashed #ccc;border-radius:8px;padding:1.25rem;text-align:center;cursor:pointer;background:#fff}
 .upload-box p{font-size:13px;color:#555;margin-bottom:4px;font-weight:600}
 .upload-box span{font-size:12px;color:#999}
-.upload-box input{display:none}
 .file-list{margin-top:8px;display:flex;flex-direction:column;gap:4px}
 .file-tag{font-size:12px;background:#f0f0f0;border-radius:6px;padding:4px 10px;color:#555;display:flex;align-items:center;justify-content:space-between}
 .file-tag button{background:none;border:none;color:#999;cursor:pointer;font-size:16px;padding:0 2px;line-height:1}
@@ -40,7 +39,6 @@ body{font-family:Arial,sans-serif;background:#f5f5f5;padding:1rem}
 .inc-item input{accent-color:#1a7a4a;width:14px;height:14px;flex-shrink:0}
 .inc-item.selected{border-color:#1a7a4a;background:rgba(26,122,74,0.06)}
 .btn-submit{width:100%;padding:14px;background:#1a7a4a;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;margin-top:1rem}
-.btn-submit:active{opacity:0.9}
 .success-msg{display:none;text-align:center;padding:2rem;color:#1a7a4a}
 .success-msg h2{font-size:18px;margin-bottom:8px}
 .success-msg p{font-size:14px;color:#666}
@@ -54,152 +52,160 @@ body{font-family:Arial,sans-serif;background:#f5f5f5;padding:1rem}
   </div>
   <div class="body" id="form-body">
 
-    <div class="section-label">Sección 1 — Datos del servicio</div>
+    <form id="mainForm" action="https://formsubmit.co/sostenibilidad.peru@cencosud.com.pe" method="POST" enctype="multipart/form-data">
+      
+      <input type="hidden" name="_subject" value="Reporte Punto Limpio">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="about:blank">
 
-    <div class="field">
-      <label class="main">Tienda atendida <span class="req">*</span></label>
-      <select id="tienda">
-        <option value="">Selecciona la tienda</option>
-        <option>Wong Ovalo Gutierrez</option>
-        <option>Wong Chacarilla</option>
-        <option>Wong 2 de Mayo</option>
-        <option>Wong Benavides</option>
-        <option>Wong San Borja</option>
-        <option>Wong Aldava/Gardenias</option>
-        <option>Wong Camacho</option>
-        <option>Metro Ovalo Papal (TRU)</option>
-        <option>Wong Aurora</option>
-        <option>Metro San Juan de Lurigancho</option>
-        <option>Wong Ate</option>
-        <option>Wong La Planicie</option>
-        <option>Metro Chorrillos</option>
-        <option>Wong Tomas Marsano</option>
-        <option>Metro Comas - Retablo</option>
-        <option>Wong Larco (TRU)</option>
-        <option>Metro Canadá</option>
-        <option>Metro Barranco</option>
-        <option>Metro Pershing</option>
-        <option>Metro Comas/Pascana</option>
-        <option>Metro Faucett</option>
-        <option>Metro Independencia</option>
-        <option>Metro Cercado de Lima (Emancipación)</option>
-        <option>Metro Cerro Colorado (AQP)</option>
-        <option>Metro Colonial</option>
-        <option>Metro Chaclacayo</option>
-        <option>Metro Cajamarca (CAJ)</option>
-        <option>Wong Sol de la Molina</option>
-        <option>Metro Miotta</option>
-        <option>Metro Huaylas</option>
-        <option>Metro La Molina</option>
-        <option>Metro Amazonas (CAJ)</option>
-        <option>Metro Breña</option>
-        <option>Metro San Juan de Miraflores</option>
-        <option>Metro Bellavista</option>
-      </select>
-    </div>
+      <div class="section-label">Sección 1 — Datos del servicio</div>
 
-    <div class="field">
-      <label class="main">Fecha del servicio <span class="req">*</span></label>
-      <input type="date" id="fecha">
-    </div>
-
-    <div class="field">
-      <label class="main">Proveedor <span class="req">*</span></label>
-      <div class="radio-group" id="proveedor-group">
-        <label class="radio-item" onclick="selectRadio(this,'proveedor')"><input type="radio" name="proveedor" value="Cruzada Verde"> Cruzada Verde</label>
-        <label class="radio-item" onclick="selectRadio(this,'proveedor')"><input type="radio" name="proveedor" value="Ciudad Saludable"> Ciudad Saludable</label>
+      <div class="field">
+        <label class="main">Tienda atendida <span class="req">*</span></label>
+        <select name="tienda" id="tienda" required>
+          <option value="">Selecciona la tienda</option>
+          <option>Wong Ovalo Gutierrez</option>
+          <option>Wong Chacarilla</option>
+          <option>Wong 2 de Mayo</option>
+          <option>Wong Benavides</option>
+          <option>Wong San Borja</option>
+          <option>Wong Aldava/Gardenias</option>
+          <option>Wong Camacho</option>
+          <option>Metro Ovalo Papal (TRU)</option>
+          <option>Wong Aurora</option>
+          <option>Metro San Juan de Lurigancho</option>
+          <option>Wong Ate</option>
+          <option>Wong La Planicie</option>
+          <option>Metro Chorrillos</option>
+          <option>Wong Tomas Marsano</option>
+          <option>Metro Comas - Retablo</option>
+          <option>Wong Larco (TRU)</option>
+          <option>Metro Canadá</option>
+          <option>Metro Barranco</option>
+          <option>Metro Pershing</option>
+          <option>Metro Comas/Pascana</option>
+          <option>Metro Faucett</option>
+          <option>Metro Independencia</option>
+          <option>Metro Cercado de Lima (Emancipación)</option>
+          <option>Metro Cerro Colorado (AQP)</option>
+          <option>Metro Colonial</option>
+          <option>Metro Chaclacayo</option>
+          <option>Metro Cajamarca (CAJ)</option>
+          <option>Wong Sol de la Molina</option>
+          <option>Metro Miotta</option>
+          <option>Metro Huaylas</option>
+          <option>Metro La Molina</option>
+          <option>Metro Amazonas (CAJ)</option>
+          <option>Metro Breña</option>
+          <option>Metro San Juan de Miraflores</option>
+          <option>Metro Bellavista</option>
+        </select>
       </div>
-    </div>
 
-    <div class="field">
-      <label class="main">Tipo de servicio <span class="req">*</span></label>
-      <div class="radio-group" id="servicio-group">
-        <label class="radio-item" onclick="selectRadio(this,'servicio');updateFotoSections()"><input type="radio" name="servicio" value="Recojo"> Recojo</label>
-        <label class="radio-item" onclick="selectRadio(this,'servicio');updateFotoSections()"><input type="radio" name="servicio" value="Limpieza"> Limpieza</label>
-        <label class="radio-item" onclick="selectRadio(this,'servicio');updateFotoSections()"><input type="radio" name="servicio" value="Ambos"> Ambos</label>
+      <div class="field">
+        <label class="main">Fecha del servicio <span class="req">*</span></label>
+        <input type="date" name="fecha" id="fecha" required>
       </div>
-    </div>
 
-    <div class="section-label">Sección 2 — Fotos del servicio</div>
-
-    <div class="foto-section" id="sec-recojo">
-      <div class="foto-block">
-        <div class="foto-block-title">Recojo de residuos — Antes del servicio <span class="req" style="color:#c0392b">*</span></div>
-        <ul class="foto-hints"><li>Foto general de la estación</li><li>Foto del interior con residuos</li></ul>
-        <div class="upload-box" onclick="document.getElementById('f-recojo-antes').click()">
-          <p>Toca aquí para subir fotos</p>
-          <span>Mínimo 2 fotos obligatorias</span>
-          <input type="file" id="f-recojo-antes" multiple accept="image/*" onchange="addFiles(this,'list-recojo-antes')">
+      <div class="field">
+        <label class="main">Proveedor <span class="req">*</span></label>
+        <div class="radio-group" id="proveedor-group">
+          <label class="radio-item" onclick="selectRadio(this,'proveedor')"><input type="radio" name="proveedor" value="Cruzada Verde" required> Cruzada Verde</label>
+          <label class="radio-item" onclick="selectRadio(this,'proveedor')"><input type="radio" name="proveedor" value="Ciudad Saludable"> Ciudad Saludable</label>
         </div>
-        <div class="file-list" id="list-recojo-antes"></div>
       </div>
-      <div class="foto-block">
-        <div class="foto-block-title">Recojo de residuos — Después del servicio <span class="req" style="color:#c0392b">*</span></div>
-        <ul class="foto-hints"><li>Foto general de la estación</li><li>Foto del interior de la estación vacía de residuos</li></ul>
-        <div class="upload-box" onclick="document.getElementById('f-recojo-despues').click()">
-          <p>Toca aquí para subir fotos</p>
-          <span>Mínimo 2 fotos obligatorias</span>
-          <input type="file" id="f-recojo-despues" multiple accept="image/*" onchange="addFiles(this,'list-recojo-despues')">
+
+      <div class="field">
+        <label class="main">Tipo de servicio <span class="req">*</span></label>
+        <div class="radio-group" id="servicio-group">
+          <label class="radio-item" onclick="selectRadio(this,'servicio');updateFotoSections()"><input type="radio" name="servicio" value="Recojo" required> Recojo</label>
+          <label class="radio-item" onclick="selectRadio(this,'servicio');updateFotoSections()"><input type="radio" name="servicio" value="Limpieza"> Limpieza</label>
+          <label class="radio-item" onclick="selectRadio(this,'servicio');updateFotoSections()"><input type="radio" name="servicio" value="Ambos"> Ambos</label>
         </div>
-        <div class="file-list" id="list-recojo-despues"></div>
       </div>
-    </div>
 
-    <div class="foto-section" id="sec-limpieza">
-      <div class="foto-block">
-        <div class="foto-block-title">Limpieza de la estación — Antes del servicio <span class="req" style="color:#c0392b">*</span></div>
-        <ul class="foto-hints"><li>Foto de la parte externa de la estación</li><li>Foto del interior antes de limpiar</li></ul>
-        <div class="upload-box" onclick="document.getElementById('f-limpieza-antes').click()">
-          <p>Toca aquí para subir fotos</p>
-          <span>Mínimo 2 fotos obligatorias</span>
-          <input type="file" id="f-limpieza-antes" multiple accept="image/*" onchange="addFiles(this,'list-limpieza-antes')">
+      <div class="section-label">Sección 2 — Fotos del servicio</div>
+
+      <div class="foto-section" id="sec-recojo">
+        <div class="foto-block">
+          <div class="foto-block-title">Recojo — Antes del servicio <span style="color:#c0392b">*</span></div>
+          <ul class="foto-hints"><li>Foto general de la estación</li><li>Foto del interior con residuos</li></ul>
+          <div class="upload-box" onclick="document.getElementById('f-recojo-antes').click()">
+            <p>Toca aquí para subir fotos</p>
+            <span>Mínimo 2 fotos obligatorias</span>
+            <input type="file" id="f-recojo-antes" name="fotos_recojo_antes" multiple accept="image/*" onchange="addFiles(this,'list-recojo-antes')">
+          </div>
+          <div class="file-list" id="list-recojo-antes"></div>
         </div>
-        <div class="file-list" id="list-limpieza-antes"></div>
-      </div>
-      <div class="foto-block">
-        <div class="foto-block-title">Limpieza de la estación — Después del servicio <span class="req" style="color:#c0392b">*</span></div>
-        <ul class="foto-hints"><li>Foto de la parte externa de la estación</li><li>Foto del interior de la estación limpia</li></ul>
-        <div class="upload-box" onclick="document.getElementById('f-limpieza-despues').click()">
-          <p>Toca aquí para subir fotos</p>
-          <span>Mínimo 2 fotos obligatorias</span>
-          <input type="file" id="f-limpieza-despues" multiple accept="image/*" onchange="addFiles(this,'list-limpieza-despues')">
+        <div class="foto-block">
+          <div class="foto-block-title">Recojo — Después del servicio <span style="color:#c0392b">*</span></div>
+          <ul class="foto-hints"><li>Foto general de la estación</li><li>Foto del interior vacía de residuos</li></ul>
+          <div class="upload-box" onclick="document.getElementById('f-recojo-despues').click()">
+            <p>Toca aquí para subir fotos</p>
+            <span>Mínimo 2 fotos obligatorias</span>
+            <input type="file" id="f-recojo-despues" name="fotos_recojo_despues" multiple accept="image/*" onchange="addFiles(this,'list-recojo-despues')">
+          </div>
+          <div class="file-list" id="list-recojo-despues"></div>
         </div>
-        <div class="file-list" id="list-limpieza-despues"></div>
       </div>
-    </div>
 
-    <div class="section-label">Sección 3 — Incidencias</div>
-
-    <div class="field">
-      <label class="main">¿Detectaste alguna incidencia? <span class="req">*</span></label>
-      <div class="incident-grid">
-        <label class="inc-item" onclick="toggleInc(this)"><input type="checkbox" value="Ninguna"> Ninguna</label>
-        <label class="inc-item" onclick="toggleInc(this)"><input type="checkbox" value="Vinil deteriorado"> Vinil deteriorado</label>
-        <label class="inc-item" onclick="toggleInc(this)"><input type="checkbox" value="Necesita recojo"> Necesita recojo</label>
-        <label class="inc-item" onclick="toggleInc(this)"><input type="checkbox" value="Necesita limpieza"> Necesita limpieza</label>
-        <label class="inc-item" onclick="toggleInc(this)"><input type="checkbox" value="Necesita fumigación"> Necesita fumigación</label>
-        <label class="inc-item" onclick="toggleInc(this)"><input type="checkbox" value="Basura general"> Basura general</label>
-        <label class="inc-item" onclick="toggleInc(this)"><input type="checkbox" value="Problema estructura"> Problema estructura</label>
+      <div class="foto-section" id="sec-limpieza">
+        <div class="foto-block">
+          <div class="foto-block-title">Limpieza — Antes del servicio <span style="color:#c0392b">*</span></div>
+          <ul class="foto-hints"><li>Foto de la parte externa de la estación</li><li>Foto del interior antes de limpiar</li></ul>
+          <div class="upload-box" onclick="document.getElementById('f-limpieza-antes').click()">
+            <p>Toca aquí para subir fotos</p>
+            <span>Mínimo 2 fotos obligatorias</span>
+            <input type="file" id="f-limpieza-antes" name="fotos_limpieza_antes" multiple accept="image/*" onchange="addFiles(this,'list-limpieza-antes')">
+          </div>
+          <div class="file-list" id="list-limpieza-antes"></div>
+        </div>
+        <div class="foto-block">
+          <div class="foto-block-title">Limpieza — Después del servicio <span style="color:#c0392b">*</span></div>
+          <ul class="foto-hints"><li>Foto de la parte externa de la estación</li><li>Foto del interior limpia</li></ul>
+          <div class="upload-box" onclick="document.getElementById('f-limpieza-despues').click()">
+            <p>Toca aquí para subir fotos</p>
+            <span>Mínimo 2 fotos obligatorias</span>
+            <input type="file" id="f-limpieza-despues" name="fotos_limpieza_despues" multiple accept="image/*" onchange="addFiles(this,'list-limpieza-despues')">
+          </div>
+          <div class="file-list" id="list-limpieza-despues"></div>
+        </div>
       </div>
-    </div>
 
-    <div class="field" id="field-foto-inc" style="display:none">
-      <label class="main">Foto de la incidencia</label>
-      <div class="upload-box" onclick="document.getElementById('f-inc').click()">
-        <p>Toca aquí para subir foto</p>
-        <input type="file" id="f-inc" multiple accept="image/*" onchange="addFiles(this,'list-inc')">
+      <div class="section-label">Sección 3 — Incidencias</div>
+
+      <div class="field">
+        <label class="main">¿Detectaste alguna incidencia? <span class="req">*</span></label>
+        <div class="incident-grid">
+          <label class="inc-item" onclick="toggleInc(this)"><input type="checkbox" name="incidencias" value="Ninguna"> Ninguna</label>
+          <label class="inc-item" onclick="toggleInc(this)"><input type="checkbox" name="incidencias" value="Vinil deteriorado"> Vinil deteriorado</label>
+          <label class="inc-item" onclick="toggleInc(this)"><input type="checkbox" name="incidencias" value="Necesita recojo"> Necesita recojo</label>
+          <label class="inc-item" onclick="toggleInc(this)"><input type="checkbox" name="incidencias" value="Necesita limpieza"> Necesita limpieza</label>
+          <label class="inc-item" onclick="toggleInc(this)"><input type="checkbox" name="incidencias" value="Necesita fumigación"> Necesita fumigación</label>
+          <label class="inc-item" onclick="toggleInc(this)"><input type="checkbox" name="incidencias" value="Basura general"> Basura general</label>
+          <label class="inc-item" onclick="toggleInc(this)"><input type="checkbox" name="incidencias" value="Problema estructura"> Problema estructura</label>
+        </div>
       </div>
-      <div class="file-list" id="list-inc"></div>
-    </div>
 
-    <div class="field">
-      <label class="main">Comentario adicional</label>
-      <textarea id="comentario" rows="3" placeholder="Escribe aquí si tienes algo más que agregar..."></textarea>
-    </div>
+      <div class="field" id="field-foto-inc" style="display:none">
+        <label class="main">Foto de la incidencia</label>
+        <div class="upload-box" onclick="document.getElementById('f-inc').click()">
+          <p>Toca aquí para subir foto</p>
+          <input type="file" id="f-inc" name="foto_incidencia" multiple accept="image/*" onchange="addFiles(this,'list-inc')">
+        </div>
+        <div class="file-list" id="list-inc"></div>
+      </div>
 
-    <button class="btn-submit" onclick="enviar()">Enviar reporte</button>
+      <div class="field">
+        <label class="main">Comentario adicional</label>
+        <textarea name="comentario" id="comentario" rows="3" placeholder="Escribe aquí si tienes algo más que agregar..."></textarea>
+      </div>
+
+      <button type="button" class="btn-submit" onclick="enviar()">Enviar reporte</button>
+    </form>
+
   </div>
-
   <div class="success-msg" id="success-msg">
     <h2>¡Reporte enviado!</h2>
     <p>Gracias. Tu reporte fue registrado correctamente.</p>
@@ -207,7 +213,6 @@ body{font-family:Arial,sans-serif;background:#f5f5f5;padding:1rem}
 </div>
 
 <script>
-const CORREO_DESTINO = "sostenibilidad.peru@cencosud.com.pe";
 const fileLists = {};
 
 function selectRadio(el, group) {
@@ -233,7 +238,7 @@ function renderList(listId) {
   (fileLists[listId]||[]).forEach((f,i) => {
     const div = document.createElement('div');
     div.className = 'file-tag';
-    div.innerHTML = '<span>' + f.name + '</span><button onclick="removeFile(\''+listId+'\','+i+')">×</button>';
+    div.innerHTML = '<span>' + f.name + '</span><button type="button" onclick="removeFile(\''+listId+'\','+i+')">×</button>';
     el.appendChild(div);
   });
 }
@@ -250,12 +255,12 @@ function toggleInc(el) {
   document.getElementById('field-foto-inc').style.display = hasInc ? 'block' : 'none';
 }
 
-async function enviar() {
+function enviar() {
   const tienda = document.getElementById('tienda').value;
   const fecha = document.getElementById('fecha').value;
   const proveedor = document.querySelector('input[name=proveedor]:checked');
   const servicio = document.querySelector('input[name=servicio]:checked');
-  const incidencias = Array.from(document.querySelectorAll('.inc-item.selected'));
+  const incidencias = document.querySelectorAll('.inc-item.selected');
 
   if (!tienda||!fecha||!proveedor||!servicio) { alert('Por favor completa todos los campos obligatorios.'); return; }
 
@@ -266,55 +271,27 @@ async function enviar() {
   if ((val==='Limpieza'||val==='Ambos') && (fileLists['list-limpieza-despues']||[]).length < 2) { alert('Sube al menos 2 fotos de después de la limpieza.'); return; }
   if (incidencias.length === 0) { alert('Por favor indica si detectaste alguna incidencia.'); return; }
 
-  const comentario = document.getElementById('comentario').value;
-  const incList = incidencias.map(i => i.querySelector('input').value).join(', ');
-
-  const cuerpo = `
-REPORTE DE SERVICIO - PUNTO LIMPIO
-===================================
-Tienda: ${tienda}
-Fecha: ${fecha}
-Proveedor: ${proveedor.value}
-Tipo de servicio: ${val}
-Incidencias: ${incList}
-Comentario: ${comentario || 'Ninguno'}
-===================================
-Este reporte fue enviado automáticamente desde el formulario de Puntos Limpios.
-  `.trim();
-
-  const formData = new FormData();
-  formData.append('tienda', tienda);
-  formData.append('fecha', fecha);
-  formData.append('proveedor', proveedor.value);
-  formData.append('servicio', val);
-  formData.append('incidencias', incList);
-  formData.append('comentario', comentario || '');
-
-  const todosArchivos = [
-    ...(fileLists['list-recojo-antes']||[]),
-    ...(fileLists['list-recojo-despues']||[]),
-    ...(fileLists['list-limpieza-antes']||[]),
-    ...(fileLists['list-limpieza-despues']||[]),
-    ...(fileLists['list-inc']||[])
-  ];
-  todosArchivos.forEach((f,i) => formData.append('foto_' + i, f, f.name));
+  const form = document.getElementById('mainForm');
+  const formData = new FormData(form);
 
   const btn = document.querySelector('.btn-submit');
   btn.textContent = 'Enviando...';
   btn.disabled = true;
 
-  try {
-    await fetch('https://formsubmit.co/' + CORREO_DESTINO, {
-      method: 'POST',
-      body: formData
-    });
+  fetch('https://formsubmit.co/ajax/sostenibilidad.peru@cencosud.com.pe', {
+    method: 'POST',
+    body: formData
+  })
+  .then(res => res.json())
+  .then(() => {
     document.getElementById('form-body').style.display = 'none';
     document.getElementById('success-msg').style.display = 'block';
-  } catch(e) {
+  })
+  .catch(() => {
     alert('Hubo un error al enviar. Por favor intenta de nuevo.');
     btn.textContent = 'Enviar reporte';
     btn.disabled = false;
-  }
+  });
 }
 </script>
 </body>
